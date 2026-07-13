@@ -1,0 +1,694 @@
+:root {
+  --color-bg:  #f3f0e9;
+  --color-dark-brown: #966f2c;
+  --color-light-brown: #d69e3d;
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  --font-head-and-nav: "Lato";
+  --font-text-and-button: "Karla";
+
+  --type-p: 16px;
+
+  --type-h1-desktop: 62px;
+  --type-h2-desktop: 48px;
+  --type-h3-desktop: 32px;
+
+  --type-h1-tablet: 48px;
+  --type-h2-tablet: 38px;
+  --type-h3-tablet: 28px;
+
+  --type-h1-mobile: 32px;
+  --type-h2-mobile: 28px;
+  --type-h3-mobile: 22px;
+
+  /* mobile max width */
+  --max-width: calc(100vw - 40px);
+}
+
+/* mobile styles */
+
+button {
+    border-radius: 0;
+    border: none;
+    font-family: var(--font-text-and-button), sans-serif;
+    font-weight: bold;
+    font-size: var(--type-p);
+    padding: 0.5em 1em;
+    text-transform: uppercase;
+
+    /* animate color change */
+    transition-property: background-color, color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.btn-white:hover {
+    color: var(--color-white);
+    background-color: var(--color-dark-brown);
+}
+
+.btn-trans {
+    border: solid 2px white;
+    background-color: #00000000;
+    color: var(--color-white);
+}
+
+.btn-trans:hover {
+    background-color: white;
+    color: black;
+}
+
+.btn-black {
+    background-color: black;
+    color: white;
+}
+
+.btn-black:hover {
+    background-color: white;
+    color: black;
+}
+
+.burger {
+    background: none;
+}
+
+html {
+    background-color: var(--color-bg);
+}
+
+.hide-mobile {
+    display: none;
+}
+
+.flex-down-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#hero-image {
+    position: absolute;
+    height: 600px;
+    width: 100%;
+    object-fit: cover;
+
+    /* i know this is not the exact same as the reference, i would use 175px but it causes issues at the bottom of the image */
+    object-position: 0 -150px;
+}
+
+.hero-content {
+    position: relative;
+    height: 600px;
+    background: rgba(0, 0, 0, 0.464);
+    color: var(--color-white);
+
+    /* center the elements so that max width works */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+    max-width: var(--max-width);
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    max-width: var(--max-width);
+    margin-top: 1.5em;
+
+    border-bottom:1px solid white ;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-head-and-nav), sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.2em;
+}
+
+h1 {
+    color: var(--color-white);
+    font-size: var(--type-h1-mobile);
+    text-align: center;
+    line-height: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+/* special hero button */
+.hero button {
+    margin-top: 1em;
+    font-size: 1.5em;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+p {
+    font-size: var(--type-p);
+    font-family: var(--font-text-and-button), sans-serif;
+    text-align: center;
+    line-height: 26px;
+}
+
+p.subhead {
+    color: var(--color-light-brown);
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.3em;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: var(--type-h2-mobile);
+    margin-bottom: 0.8em;
+}
+
+section {
+    padding: 60px 20px;
+}
+
+.coffee-xp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 18px;
+}
+
+.coffee-xp-grid img {
+    width: 100%;
+    height: 100%;
+}
+
+/* make the first image larger */
+.coffee-xp-grid img:nth-child(1) {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+#offer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1em;
+}
+
+.visit-us-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.offer-card {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.offer-card img {
+    margin-top: 3em;
+    margin-bottom: 1em;
+    height: 15em;
+}
+
+.offer-card p {
+    margin-top: 1.5em;
+}
+
+h3 {
+    font-size: var(--type-h3-mobile);
+    text-align: center;
+}
+
+#shop-section {
+    background-image:
+        linear-gradient(to top,
+            rgba(0, 0, 0, 0.50),
+            rgba(0, 0, 0, 0.50)),
+        url("../images/coffee-shop.jpeg");
+    background-position: center;
+    background-size: 210%;
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+#shop-section button {
+    padding: 1em 2em;
+    font-size: 1.2em;
+}
+
+#shop-section h2{
+    text-align: center;
+    color: var(--color-white);
+}
+
+.shop-wrapper:nth-child(1) {
+    margin-bottom: 3em;
+}
+
+#about-section img {
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+#about-section button {
+    margin-top: 1em;
+    padding: 1em 2em;
+    font-size: 1.2em;
+}
+
+#about-section p {
+    text-align: left;
+}
+
+.testimonials-card {
+  position: relative;
+  display: inline-block; 
+}
+
+#testimonials-section {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+#testimonials-section img {
+    width: 100%;
+}
+
+.testimonial-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    /* width is 100% minus padding */
+    width: calc(100% - 100px - 2em);
+
+    /* height is 100% minus padding */
+    height: calc(100% - 60px);
+
+    padding: 0 100px 60px 2em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.testimonials-card cite {
+    color : var(--color-light-brown);
+    text-transform: uppercase;
+    font-family: var(--font-text-and-button), sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.testimonials-card blockquote {
+    font-family: var(--font-text-and-button), sans-serif;
+    font-size: var(--type-p);
+    line-height: 1.4em;
+}
+
+footer {
+    background-color: var(--color-black);
+}
+
+footer p {
+    border-top: var(--color-bg) 1px solid;
+    color: var(--color-bg);
+    padding: 9px 0 140px 0;
+}
+
+/* animations when you enter the site */
+/* nav drop in */
+@keyframes drop-in {
+    from {
+        transform: translateY(-100px);
+    }
+
+    to {
+        transform: translateY(0px);
+    }
+}
+
+nav{
+    animation-name: drop-in;
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+}
+
+/* hero content fade in */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.hero{
+    /* add animation */
+    animation-name: fade-in;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+
+    /* make element start at 0 opacity and stay at full after */
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+/* skip link */
+.skip {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  display: block;
+}
+
+.skip:focus {
+  position: static;
+  width: auto;
+  height: auto;
+}
+
+
+/* tablet style */
+@media (min-width: 768px) {
+    /* make nav visible */
+    .hide-mobile {
+        display: inline;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    nav ul {
+        width: 100%;
+    }
+    
+    /* make the list items in the nav that are not the logo to the right side */
+    nav ul li:nth-child(2) {
+        margin-left: auto;
+    }
+
+    /* style all links other than the logo */
+    nav ul li:not(:first-child) {
+        
+        align-self: flex-end;
+        margin-bottom: 1em;
+
+        a {
+            color: var(--color-white);
+            text-decoration: none;
+
+            font-family: var(--font-head-and-nav);
+            text-transform: uppercase;
+            font-weight: bold;
+
+            padding: 1em 2em;
+            border-radius: 10%;
+
+            margin-left: 2em;
+
+            transition-property: background-color, border;
+            transition-duration: 0.3s;
+            transition-timing-function: ease-out;
+        }
+        
+        a:hover {
+            background-color: #00000053;
+        }
+
+        a:focus {
+            background-color: #00000053;
+            border: solid 1px white;
+        }
+
+    }
+    h1 {
+        font-size:var(--type-h1-tablet);
+        max-width: 748px;
+    }
+
+    h2 {
+        font-size:var(--type-h2-tablet);
+    }
+
+    h3 {
+        font-size:var(--type-h3-tablet);
+    }
+
+    h4 {
+        font-size:var(--type-h4-tablet);
+    }    
+
+    .hero p {
+        max-width: 540px;
+    }
+
+    .hero button {
+        padding: 1em 2em;
+    }
+
+    
+    #hero-image {
+        object-position: 0 -350px;
+        height: 700px;
+    }
+
+    .hero-content {
+        height: 700px;
+    }
+
+
+    section {
+        padding: 60px 52px;
+    }
+
+    .coffee-xp-grid {
+        grid-template-columns: repeat(4, 1fr) ;
+        gap: 1.5em 2em;
+    }
+
+    .coffee-xp-grid img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .visit-us-box {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr) ;
+        grid-template-rows: repeat(2, 1fr) ;
+    }
+
+    .offer-card:first-child {
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 1;
+    }
+
+    .offer-card:nth-child(2) {
+        grid-column: 3 / span 2;
+        grid-row: 1 / span 1;
+    }
+
+    .offer-card:last-child {
+        grid-column: 2 / span 2;
+        grid-row: 2 / span 1;
+    }
+
+    #shop-section {
+        background-size: 150%;
+        padding-top: 5em;
+        padding-bottom: 5em;
+    }
+
+    #about-section p:last-of-type {
+        margin-top: 1em;
+    }
+
+    
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr) ;
+        grid-template-rows: repeat(2, 1fr) ;
+        gap: 2em;
+    }
+
+    .testimonials-card:first-child {
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 1;
+    }
+
+    .testimonials-card:nth-child(2) {
+        grid-column: 3 / span 2;
+        grid-row: 1 / span 1;
+    }
+
+    .testimonials-card:last-child {
+        grid-column: 2 / span 2;
+        grid-row: 2 / span 1;
+    }
+
+    .testimonial-content {
+        /* width is 100% minus padding */
+        width: calc(100% - 50px - 1em);
+
+        /* height is 100% minus padding */
+        height: calc(100% - 30px);
+
+        padding: 0 50px 30px 1em;
+    }
+
+}
+
+/* desktop style */
+
+@media (min-width: 1200px) {
+    h1 {
+        font-size:var(--type-h1-desktop);
+        max-width: 1200px;
+    }
+
+    h2 {
+        font-size:var(--type-h2-desktop);
+        max-width: 606px;
+    }
+
+    h3 {
+        font-size:var(--type-h3-desktop);
+    }
+
+    h4 {
+        font-size:var(--type-h4-desktop);
+    }    
+
+    #hero-image {
+        object-position: 0 -1000px;
+        height: 800px;
+    }
+
+    .hero-content {
+        height: 800px;
+    }
+
+    .hero-content > * {
+        max-width: 1200px;
+    }
+
+    .hero p {
+        max-width: 900px;
+    }
+
+    .max-with-wrapper {
+        max-width: 1200px;
+    }
+
+    /* center the max width wrappers */
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    
+    .visit-us-box {
+        grid-template-columns: repeat(3, 1fr) ;
+        grid-template-rows: 1fr;
+        align-items: baseline;
+        gap: 2em;
+    }
+
+    .offer-card:first-child {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+    }
+
+    .offer-card:nth-child(2) {
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 1;
+    }
+
+    .offer-card:last-child {
+        grid-column: 3 / span 1;
+        grid-row: 1 / span 1;
+    }
+    
+    #offer-section .max-with-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #shop-section .max-with-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .shop-wrapper:nth-child(1) {
+        margin-bottom: 0px;
+    }
+
+    #shop-section {
+        background-size: 100%;
+        padding-top: 10em;
+        padding-bottom: 10em;
+    }
+
+    #about-section .max-with-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #about-section img {
+        flex: 0 0 50%; /* take 50% of the flex container */
+        box-sizing: border-box; 
+        height: 584px;
+        object-fit: cover;
+    }
+
+    .group-to-side {
+        margin-left: 2em;
+    }
+
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 2em;
+    }
+
+    .testimonials-card:first-child {
+        grid-column: 1 / span 1;
+        grid-row: 1 / span 1;
+    }
+
+    .testimonials-card:nth-child(2) {
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 1;
+    }
+
+    .testimonials-card:last-child {
+        grid-column: 3 / span 1;
+        grid-row: 1 / span 1;
+    }
+}
